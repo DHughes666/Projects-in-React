@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Birthday from './components/birthday-component';
+import { Route, Switch } from 'react-router-dom';
+import RouterBirthday from './routes/routerBirthday-component';
+import Generate from './components/generate-component';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path='/' component={Birthday} />
+        <Route exact 
+        path='/birthday/:name?/:day?/:month?/' 
+        component={RouterBirthday} />
+        <Route exact path='/generate' component={Generate} />
+      </Switch>
     </div>
   );
 }
