@@ -1,8 +1,8 @@
-
+import UseStateBasics from "./tutorial/useState-component"
 function App() {
   return (
     <div className='container'>
-      <h1>Advanced React</h1>
+      <UseStateBasics />
     </div>
     )
 }

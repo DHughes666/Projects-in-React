@@ -5,9 +5,9 @@ export const data = [
     { id: 4, name: 'anna' },
   ];
   
-  export const people = [
-    { id: 1, name: 'bob', nickName: 'Stud Muffin' },
-    { id: 2, name: 'peter' },
+  export const peopleData = [
+    { id: 1, name: 'bob', nickName: 'Stud Muffin', hobby: 'Reading books' },
+    { id: 2, name: 'peter', nickName: 'Sauce Matchers', hobby: 'Chess'},
     {
       id: 3,
       name: 'oliver',
@@ -18,7 +18,9 @@ export const data = [
           },
         },
       ],
+      nickName: 'Arrya Yodel',
+      hobby: 'Checkers'
     },
-    { id: 4, name: 'david' },
+    { id: 4, name: 'david', nickName: 'Davido', hobby: 'Music' },
   ];
   
