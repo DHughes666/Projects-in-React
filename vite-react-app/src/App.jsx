@@ -1,8 +1,8 @@
-import UseEffectBasics from "./tutorial/useEffect-component"
+import MultipleReturnsBasics from "./tutorial/03-conditional-rendering/01-multiple-returns-component"
 function App() {
   return (
     <div className='container'>
-      <UseEffectBasics />
+      <MultipleReturnsBasics />
     </div>
     )
 }
