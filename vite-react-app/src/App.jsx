@@ -1,8 +1,8 @@
-import MultipleReturnsBasics from "./tutorial/03-conditional-rendering/01-multiple-returns-component"
+import OrderMatters from "./tutorial/03-conditional-rendering/02-order-matters-component"
 function App() {
   return (
     <div className='container'>
-      <MultipleReturnsBasics />
+      <OrderMatters />
     </div>
     )
 }
