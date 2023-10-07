@@ -1,24 +1,41 @@
 import { useEffect, useState } from "react";
 
+const url = 'https://api.github.com/users';
+
 const UseEffectBasics = () => {
-    const [value, setValue] = useState(0);
-    const sayHello = () => {
-        console.log('hello there');
-    };
-
-    sayHello();
-
+    const [users, setUsers] = useState([]);
+    
     useEffect(() => {
-        
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const users = await response.json();
+                setUsers(users);
+                console.log(users);
+            } catch (e) {
+                console.log(e);
+            }
+        };
+        fetchData();
     }, [])
 
     return (
-        <div>
-            <h1>Value: {value}</h1>
-            <button className="btn" onClick={() => setValue(value + 1)}>
-                click me
-            </button>
-        </div>
+        <section>
+            <h3>Github users</h3>
+            <ul className="users">
+                {users.map(user =>{
+                    const {id, login, avatar_url, html_url} = user
+                    return <li key={id}>
+                        <img 
+                            src={avatar_url} alt={login} 
+                        />
+                        <h5>{login}</h5>
+                        
+                        <a href={html_url}>Profile</a>
+                    </li>
+                })}
+            </ul>
+        </section>
     )
 }
 
