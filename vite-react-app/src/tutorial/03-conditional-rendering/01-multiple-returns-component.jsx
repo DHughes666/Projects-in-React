@@ -12,6 +12,11 @@ const MultipleReturnsBasics = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(url);
+                if (!response.ok) {
+                    setIsError(true);
+                    setIsLoading(false);
+                    return
+                }
                 const user = await response.json();
                 setUser(user);
                 console.log(user);
