@@ -1,8 +1,8 @@
-import UseStateBasics from "./tutorial/useState-component"
+import UseEffectBasics from "./tutorial/useEffect-component"
 function App() {
   return (
     <div className='container'>
-      <UseStateBasics />
+      <UseEffectBasics />
     </div>
     )
 }

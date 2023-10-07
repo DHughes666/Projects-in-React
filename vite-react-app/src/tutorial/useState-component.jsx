@@ -39,6 +39,9 @@ const UseStateBasics = () => {
                     <button type='button' 
                     onClick={() => showPerson(id)}
                     >Show {name}</button>
+                    <button type='button' 
+                    onClick={() => removePerson(id)}
+                    >Remove {name}</button>
                 </div>
             )
         })}
