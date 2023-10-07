@@ -29,8 +29,14 @@ const ControlledInputs = () => {
         console.log(user.password);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!name || !email) return;
+        console.log('name: ', user.name, 'email: ', user.email);
+    }
+
     return (
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
             <h4>Controlled inputs</h4>
             <div className="form-row">
                 <label htmlFor="name" className="form-label">Name</label>
