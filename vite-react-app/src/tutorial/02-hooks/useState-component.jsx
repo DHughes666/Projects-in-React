@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { peopleData } from '../data';
+import { peopleData } from '../../data';
 
 const UseStateBasics = () => {
     const [people, setPeople] = useState(peopleData);
