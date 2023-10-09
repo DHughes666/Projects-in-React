@@ -8,7 +8,7 @@ const UncontrolledInputs = () => {
         const formData = new FormData(e.currentTarget);
         console.log(formData);
         const email = formData.get('email');
-        console.log(email);
+        console.log([...formData.entries()]);
     };
 
     return (
