@@ -24,6 +24,11 @@ const ControlledInputChallenge = () => {
         
     }
 
+    const handleRemove = (id) => {
+        const newUser = users.filter(user => user.id !== id) 
+        setUsers(newUser);
+    }
+
     return (
         <form className="form" onSubmit={handleSubmit}>
             <h4>Add User</h4>
@@ -40,7 +45,12 @@ const ControlledInputChallenge = () => {
                 />
             </div>
             {users.map((user) =>(
-                <h4>{user.name}</h4>
+                <div key={user.id}>
+                    <h4>{user.name}</h4>
+                    <button onClick={() => handleRemove(user.id)}
+                        className="btn"
+                    >Remove</button>
+                </div>
             ))}
             
             <button type="submit" className="btn btn-block">Add</button>

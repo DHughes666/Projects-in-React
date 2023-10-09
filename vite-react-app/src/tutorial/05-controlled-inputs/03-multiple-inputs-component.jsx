@@ -1,9 +1,7 @@
 import { useState } from "react";
 
-const ControlledInputs = () => {
-    // const [name, setName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [password, setPassword] = useState('')
+
+const MultipleInputs = () => {
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -36,8 +34,9 @@ const ControlledInputs = () => {
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <h4>Controlled inputs</h4>
+        <div>
+            <form className="form" onSubmit={handleSubmit}>
+            <h4>Multiple inputs</h4>
             <div className="form-row">
                 <label htmlFor="name" className="form-label">Name</label>
                 <input 
@@ -76,7 +75,8 @@ const ControlledInputs = () => {
             </div>
             <button type="submit" className="btn btn-block">Submit</button>
         </form>
+        </div>
     )
 }
 
-export default ControlledInputs;
+export default MultipleInputs;
