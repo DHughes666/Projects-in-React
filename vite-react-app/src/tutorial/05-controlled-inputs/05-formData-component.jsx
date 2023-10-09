@@ -11,6 +11,9 @@ const UncontrolledInputs = () => {
         // console.log([...formData.entries()]);
         const newUser = Object.fromEntries(formData)
         console.log(newUser);
+        setValue(value + 1);
+        // reset the form
+        e.currentTarget.reset();
     };
 
     return (
