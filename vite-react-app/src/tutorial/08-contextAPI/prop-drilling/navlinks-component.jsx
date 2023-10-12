@@ -1,7 +1,7 @@
 import { useState } from "react";
 import UserContainer from "./user-container-component";
 
-const NavLinks = ({user, logout}) => {
+const NavLinks = () => {
     return (
         <div className="nav-container">
         <ul className="nav-links">
