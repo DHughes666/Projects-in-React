@@ -1,13 +1,11 @@
-import FetchData from "./tutorial/07-customHooks/02-fetch-data-component"
-import ReducerBasics from "./tutorial/09-useReducerHook/01-useReducer-component"
-import Navbar from "./tutorial/08-contextAPI/prop-drilling/navbar-component"
+import LowerState from "./tutorial/10-performance/01-lower-state"
+import LowerStateChallenge from "./tutorial/10-performance/02-lower-state-challenge"
 
 function App() {
   return (
     <div className='container'>
-      <ReducerBasics />
-      <Navbar />
-      {/* <FetchData /> */}
+      <LowerStateChallenge />
+      <LowerState />
     </div>
     )
 }
