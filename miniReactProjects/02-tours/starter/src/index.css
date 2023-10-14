@@ -231,11 +231,10 @@ ul {
 .loading {
   width: 6rem;
   height: 6rem;
-  border: 5px solid var(--grey-400);
-  border-radius: 50%;
+  
   margin: 0 auto;
   border-top-color: var(--primary-500);
-  animation: spinner 0.3s linear infinite;
+  
 }
 /* title */
 
@@ -246,7 +245,7 @@ ul {
 .title-underline {
   background: var(--primary-500);
   width: 7rem;
-  height: 0.25rem;
+  height: 1.25rem;
   margin: 0 auto;
   margin-top: 1rem;
 }
