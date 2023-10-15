@@ -1,4 +1,17 @@
+import {FaGithubSquare} from 'react-icons/fa';
+import Review from './review';
+
 const App = () => {
-  return <h2>Reviews Starter</h2>;
+  return (
+    <main>
+      <section className='container'>
+        <div className='title'>
+          <h2>Our reviews</h2>
+          <div className='title-underline'/>
+          <Review />
+        </div>
+      </section>
+    </main>
+  )
 };
 export default App;
