@@ -1,4 +1,53 @@
-/* ============= GLOBAL CSS =============== */
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(184, 91%, 17%);
+  --clr-primary-2: hsl(185, 84%, 25%);
+  --clr-primary-3: hsl(185, 81%, 29%);
+  --clr-primary-4: hsl(184, 77%, 34%);
+  --clr-primary-5: #2caeba;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(185, 57%, 50%);
+  --clr-primary-7: hsl(184, 65%, 59%);
+  --clr-primary-8: hsl(184, 80%, 74%);
+  --clr-primary-9: hsl(185, 94%, 87%);
+  --clr-primary-10: hsl(186, 100%, 94%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
 
 *,
 ::after,
@@ -7,299 +56,154 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  font-size: 100%;
-} /*16px*/
-
-:root {
-  /* colors */
-  --primary-100: #ccfbf1;
-  --primary-200: #99f6e4;
-  --primary-300: #5eead4;
-  --primary-400: #2dd4bf;
-  --primary-500: #14b8a6;
-  --primary-600: #0d9488;
-  --primary-700: #0f766e;
-  --primary-800: #115e59;
-  --primary-900: #134e4a;
-
-  /* grey */
-  --grey-50: #f8fafc;
-  --grey-100: #f1f5f9;
-  --grey-200: #e2e8f0;
-  --grey-300: #cbd5e1;
-  --grey-400: #94a3b8;
-  --grey-500: #64748b;
-  --grey-600: #475569;
-  --grey-700: #334155;
-  --grey-800: #1e293b;
-  --grey-900: #0f172a;
-  /* rest of the colors */
-  --black: #222;
-  --white: #fff;
-  --red-light: #f8d7da;
-  --red-dark: #842029;
-  --green-light: #d1e7dd;
-  --green-dark: #0f5132;
-
-  --small-text: 0.875rem;
-  --extra-small-text: 0.7em;
-  /* rest of the vars */
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
-  --borderRadius: 0.25rem;
-  --letterSpacing: 1px;
-  --transition: 0.3s ease-in-out all;
-  --max-width: 1120px;
-  --fixed-width: 600px;
-
-  /* box shadow*/
-  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
 body {
-  background: var(--backgroundColor);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--textColor);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
-p {
-  margin: 0;
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
 }
 h1,
 h2,
 h3,
-h4,
-h5 {
-  margin: 0;
-  font-family: var(--headingFont);
-  font-weight: 400;
-  line-height: 1;
-  text-transform: capitalize;
-  letter-spacing: var(--letterSpacing);
-}
-
-h1 {
-  font-size: 3.052rem;
-}
-
-h2 {
-  font-size: 2.441rem;
-}
-
-h3 {
-  font-size: 1.953rem;
-}
-
 h4 {
-  font-size: 1.563rem;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
 }
-
-h5 {
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
   font-size: 1.25rem;
 }
-
-.text {
-  margin-bottom: 1.5rem;
-  max-width: 40em;
+h4 {
+  font-size: 0.875rem;
 }
-
-small,
-.text-small {
-  font-size: var(--small-text);
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
 }
-
-a {
-  text-decoration: none;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-/* buttons */
-
-.btn {
-  cursor: pointer;
-  color: var(--white);
-  background: var(--primary-500);
-  border: transparent;
-  border-radius: var(--borderRadius);
-  letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
-  box-shadow: var(--shadow-1);
-  transition: var(--transition);
-  text-transform: capitalize;
-  display: inline-block;
-}
-.btn:hover {
-  background: var(--primary-700);
-  box-shadow: var(--shadow-3);
-}
-.btn-hipster {
-  color: var(--primary-500);
-  background: var(--primary-200);
-}
-.btn-hipster:hover {
-  color: var(--primary-200);
-  background: var(--primary-700);
-}
-.btn-block {
-  width: 100%;
-}
-
-/* alerts */
-.alert {
-  padding: 0.375rem 0.75rem;
-  margin-bottom: 1rem;
-  border-color: transparent;
-  border-radius: var(--borderRadius);
-}
-
-.alert-danger {
-  color: var(--red-dark);
-  background: var(--red-light);
-}
-.alert-success {
-  color: var(--green-dark);
-  background: var(--green-light);
-}
-/* form */
-
-.form {
-  width: 90vw;
-  max-width: var(--fixed-width);
-  background: var(--white);
-  border-radius: var(--borderRadius);
-  box-shadow: var(--shadow-2);
-  padding: 2rem 2.5rem;
-  margin: 3rem auto;
-}
-.form-label {
-  display: block;
-  font-size: var(--small-text);
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--letterSpacing);
-}
-.form-input,
-.form-textarea {
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  border-radius: var(--borderRadius);
-  background: var(--backgroundColor);
-  border: 1px solid var(--grey-200);
-}
-
-.form-row {
-  margin-bottom: 1rem;
-}
-
-.form-textarea {
-  height: 7rem;
-}
-::placeholder {
-  font-family: inherit;
-  color: var(--grey-400);
-}
-.form-alert {
-  color: var(--red-dark);
-  letter-spacing: var(--letterSpacing);
-  text-transform: capitalize;
-}
-/* alert */
-
-@keyframes spinner {
-  to {
-    transform: rotate(360deg);
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
   }
 }
+/*  global classes */
 
-.loading {
-  width: 6rem;
-  height: 6rem;
-  border: 5px solid var(--grey-400);
-  border-radius: 50%;
-  border-top-color: var(--primary-500);
-  animation: spinner 0.6s linear infinite;
-  margin: 0 auto;
-}
-
-/* title */
-
-.title {
-  text-align: center;
-}
-
-.title-underline {
-  background: var(--primary-500);
-  width: 7rem;
-  height: 0.25rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-/* ============= PROJECT CSS =============== */
-
-.jobs-center {
-  width: 80vw;
+/* section */
+.section {
+  width: 90vw;
   margin: 5rem auto;
   max-width: var(--max-width);
 }
 
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+.loading {
+  text-align: center;
+}
+
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  margin-bottom: 1.25rem;
+  background: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/*
+=============== 
+Jobs
+===============
+*/
+
+.jobs-center {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
 .btn-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
   margin-bottom: 4rem;
+  flex-wrap: wrap;
 }
-
 .job-btn {
   background: transparent;
   border-color: transparent;
-  letter-spacing: var(--letterSpacing);
-  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  letter-spacing: var(--spacing);
+  margin: 0 0.5rem;
   transition: var(--transition);
+  cursor: pointer;
+  padding: 0.25rem 0;
+  line-height: 1;
+  outline-color: var(--clr-primary-10);
 }
 .job-btn:hover {
-  color: var(--primary-500);
-  box-shadow: 0 2px var(--primary-500);
+  color: var(--clr-primary-5);
+  box-shadow: 0 2px var(--clr-primary-5);
 }
 .active-btn {
-  color: var(--primary-500);
-  box-shadow: 0 2px var(--primary-500);
+  color: var(--clr-primary-5);
+  box-shadow: 0 2px var(--clr-primary-5);
 }
 
-.job-company {
+.job-info h3 {
+  font-weight: 400;
+}
+.job-info h4 {
   text-transform: uppercase;
-  color: var(--grey-700);
-  background: var(--grey-300);
+  color: var(--clr-grey-5);
+  background: var(--clr-grey-9);
   display: inline-block;
   padding: 0.375rem 0.75rem;
-  border-radius: var(--borderRadius);
-  margin: 0.75rem 0;
+  border-radius: var(--radius);
 }
 .job-date {
-  color: var(--grey-500);
-  letter-spacing: var(--letterSpacing);
-  margin-bottom: 2rem;
+  letter-spacing: var(--spacing);
 }
-
 .job-desc {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -307,16 +211,13 @@ ul {
   align-items: center;
   margin-bottom: 1.25rem;
 }
-
-.job-icon {
-  color: var(--primary-500);
-}
-
 .job-desc p {
-  color: var(--grey-700);
-  line-height: 1.5;
+  margin-bottom: 0;
+  color: var(--clr-grey-3);
 }
-
+.job-icon {
+  color: var(--clr-primary-5);
+}
 @media screen and (min-width: 992px) {
   .jobs-center {
     width: 90vw;
@@ -331,10 +232,35 @@ ul {
   .job-btn {
     margin-bottom: 1rem;
   }
-  .job-btn:hover {
-    box-shadow: -2px 0px var(--primary-500);
-  }
   .active-btn {
-    box-shadow: -2px 0px var(--primary-500);
+    box-shadow: -2px 0 var(--clr-primary-5);
+  }
+  .job-btn:hover {
+    box-shadow: -2px 0 var(--clr-primary-5);
   }
 }
+.btn {
+  text-transform: uppercase;
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-9);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  display: block;
+  width: 12rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
+
