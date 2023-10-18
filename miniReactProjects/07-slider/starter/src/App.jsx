@@ -36,7 +36,11 @@ function App() {
           }
         }, [index, people])
 
-        
+        useEffect(() => {
+          setInterval(() => {
+            setIndex(index + 1);
+          }, 3000)
+        }, [index])
 
         return (
           <article className={position} key={id}>
