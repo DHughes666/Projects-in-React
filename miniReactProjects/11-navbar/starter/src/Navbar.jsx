@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import { FaBars, FaTwitter, } from 'react-icons/fa'
-import {AiFillLinkedin} from 'react-icons/ai'
-import {BiLogoPinterest} from 'react-icons/bi'
 import { links, social } from './data'
 import logo from './logo.svg'
 
