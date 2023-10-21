@@ -16,11 +16,11 @@ const AppProvider = ({children}) => {
     }
 
     const openModal = () => {
-        setIsSidebarOpen(true);
+        setIsModalOpen(true);
     }
 
     const closeModal = () => {
-        setIsSidebarOpen(false);
+        setIsModalOpen(false);
     }
 
     const value = {
