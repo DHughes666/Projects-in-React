@@ -1,9 +1,10 @@
-import CartItem from './CartItem';
-import cartItems from './data';
-const CartContainer = () => {
-  const cartArray = [...cartItems];
+import React from 'react'
+import CartItem from './CartItem'
+import { useGlobalContext } from './context'
 
-  if (cartArray.length === 0) {
+const CartContainer = () => {
+  const { cart, total } = useGlobalContext()
+  if (cart.length === 0) {
     return (
       <section className='cart'>
         {/* cart header */}
@@ -12,7 +13,7 @@ const CartContainer = () => {
           <h4 className='empty-cart'>is currently empty</h4>
         </header>
       </section>
-    );
+    )
   }
   return (
     <section className='cart'>
@@ -22,27 +23,27 @@ const CartContainer = () => {
       </header>
       {/* cart items */}
       <div>
-        {cartArray.map((cartItem) => {
-          return <CartItem key={cartItem.id} {...cartItem} />;
+        {cart.map((item) => {
+          return <CartItem key={item.id} {...item} />
         })}
       </div>
       {/* cart footer */}
       <footer>
         <hr />
-        <div>
-          <h5 className='cart-total'>
-            total <span>$10</span>
-          </h5>
+        <div className='cart-total'>
+          <h4>
+            total <span>${total}</span>
+          </h4>
         </div>
         <button
-          className='btn btn-hipster'
+          className='btn clear-btn'
           onClick={() => console.log('clear cart')}
         >
           clear cart
         </button>
       </footer>
     </section>
-  );
-};
+  )
+}
 
-export default CartContainer;
+export default CartContainer
