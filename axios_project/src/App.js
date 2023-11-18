@@ -1,4 +1,4 @@
-import Setup from "./examples/2-headers";
+import Setup from "./examples/3-post-request";
 
 import Title from './components/Title';
 function App() {
