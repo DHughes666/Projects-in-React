@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import pages
 import Home from './pages/Home'
 import About from './pages/About'
@@ -10,7 +10,15 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <div>
-      <h2>app component</h2>
+    <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/cocktail/:id" element={<SingleCocktail/>}/>
+      <Route path="*" element={<Error />} />
+    </Routes>
+  </BrowserRouter>
     </div>
   )
 }
