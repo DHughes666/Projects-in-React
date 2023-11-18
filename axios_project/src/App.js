@@ -1,4 +1,4 @@
-import Setup from "./examples/5-custom-instance";
+import Setup from "./examples/2-headers";
 import Title from './components/Title';
 
 
