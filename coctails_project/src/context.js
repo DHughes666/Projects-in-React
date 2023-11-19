@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, 
+  useEffect, useCallback } from 'react'
 import axios from 'axios'
-import { useCallback } from 'react'
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 const AppContext = React.createContext()
@@ -11,10 +11,10 @@ const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([])
   
   const value = {
-    loading, searchTerm, cocktails
+    loading, searchTerm, cocktails, setSearchTerm
   }
 
-  const fetchDrinks = async () => {
+  const fetchDrinks = useCallback(async () => {
     setLoading(true)
     try {
       const {data} = await axios(`${url}${searchTerm}`, {
@@ -49,11 +49,11 @@ const AppProvider = ({ children }) => {
       console.log(err.response);
       setLoading(false)
     }
-  }
+  }, [searchTerm]);
 
   useEffect(() => {
     fetchDrinks()
-  }, [searchTerm]);
+  }, [searchTerm, fetchDrinks]);
 
   return <AppContext.Provider value={value}>
     {children}
