@@ -1,7 +1,13 @@
 import React from 'react'
+import {Outlet} from 'react-router-dom'
 import styled from 'styled-components'
 const Footer = () => {
-  return <h4>footer</h4>
+  return (
+    <div>
+      <h4>footer</h4>
+      <Outlet />
+    </div>
+  )
 }
 
 const Wrapper = styled.footer`
