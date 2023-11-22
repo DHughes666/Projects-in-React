@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Navbar, Sidebar, Footer } from './components'
+import { Navbar, Footer } from './components'
 import {
   Home,
     Products,
@@ -15,20 +15,19 @@ import {
 function App() {
   return (
     <>
-    <Navbar />
-    <Sidebar />
     <BrowserRouter>
-      <Routes>    
-        <Route path='/' element={<Home />} />
-        <Route path='*' element={<Error />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/products/:id' element={<SingleProduct />} />
-        <Route path='/checkout' element={<Checkout />} />
+      <Navbar />
+      <Routes> 
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<Error />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/products/:id' element={<SingleProduct />} />
+          <Route path='/checkout' element={<Checkout />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
-    <Footer />
     </>
   )
 

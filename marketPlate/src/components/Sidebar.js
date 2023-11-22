@@ -12,7 +12,6 @@ const Sidebar = () => {
   return (
     <div>
       <h4>sidebar</h4>
-      <Outlet />
     </div>
   )
 }
