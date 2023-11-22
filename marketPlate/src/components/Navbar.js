@@ -10,10 +10,13 @@ import { useUserContext } from '../context/user_context'
 
 const Nav = () => {
   return (
-    <div>
-      <h4>navbar</h4>
-      <Outlet />
-    </div>
+    <NavContainer>
+      <div>
+        <div>
+          
+        </div>
+      </div>
+    </NavContainer>
   )
   
 }
