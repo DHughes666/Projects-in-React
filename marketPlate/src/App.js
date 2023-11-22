@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Navbar, Footer } from './components'
+import { Navbar, Sidebar, Footer } from './components'
 import {
   Home,
     Products,
@@ -17,6 +17,7 @@ function App() {
     <>
     <BrowserRouter>
       <Navbar />
+      <Sidebar />
       <Routes> 
           <Route path='/' element={<Home />} />
           <Route path='*' element={<Error />} />

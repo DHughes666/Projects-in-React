@@ -7,7 +7,6 @@ import { links } from '../utils/constants'
 import CartButtons from './CartButtons'
 import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
-import {Sidebar} from '../components/index'
 
 const Nav = () => {
   return (
@@ -33,7 +32,6 @@ const Nav = () => {
         <CartButtons />
       </div>
     </NavContainer>
-    <Sidebar />
     <Outlet />
     </>
   )

@@ -3,10 +3,14 @@ import {Outlet} from 'react-router-dom'
 import styled from 'styled-components'
 const Footer = () => {
   return (
-    <div>
-      <h4>footer</h4>
+    <Wrapper>
+      <h5>
+        &copy; {new Date().getFullYear()}
+        <span> Prome INC </span>
+      </h5>
+      <h5>All rights reserved</h5>
       <Outlet />
-    </div>
+    </Wrapper>
   )
 }
 

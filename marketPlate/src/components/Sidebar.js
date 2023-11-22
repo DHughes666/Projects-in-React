@@ -6,13 +6,35 @@ import { FaTimes } from 'react-icons/fa'
 import { links } from '../utils/constants'
 import styled from 'styled-components'
 import CartButtons from './CartButtons'
-import { useUserContext } from '../context/user_context'
+
 
 const Sidebar = () => {
+  const {closeSidebar} = useProductsContext()
+  
+  const isOpen = true
   return (
-    <div>
-      <h4>sidebar</h4>
-    </div>
+    <SidebarContainer>
+      <aside className={`${isOpen ? 'sidebar show-sidebar': 'sidebar'}`}>
+        <div className='sidebar-header'>
+          <img src={logo} className='logo' alt='comfy logo' />
+          <button className='close-btn' type='button' onChange={closeSidebar}>
+            <FaTimes />
+          </button>
+        </div>
+        <ul className='links'>
+          {links.map(link => {
+            const {id, text, url} = link
+            return <li key={id}>
+              <Link to={url}>{text}</Link>
+            </li>
+          })}
+          <li>
+            <Link to='/checkout'>checkout</Link>
+          </li>
+        </ul>
+        <CartButtons />
+      </aside>
+    </SidebarContainer>
   )
 }
 
