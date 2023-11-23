@@ -9,15 +9,14 @@ import CartButtons from './CartButtons'
 
 
 const Sidebar = () => {
-  const {closeSidebar} = useProductsContext()
+  const {isSidebarOpen, closeSidebar} = useProductsContext()
   
-  const isOpen = true
   return (
     <SidebarContainer>
-      <aside className={`${isOpen ? 'sidebar show-sidebar': 'sidebar'}`}>
+      <aside className={`${isSidebarOpen ? 'sidebar show-sidebar': 'sidebar'}`}>
         <div className='sidebar-header'>
           <img src={logo} className='logo' alt='comfy logo' />
-          <button className='close-btn' type='button' onChange={closeSidebar}>
+          <button className='close-btn' type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
