@@ -7,7 +7,24 @@ import Loading from './Loading'
 import Product from './Product'
 
 const FeaturedProducts = () => {
-  return <h4>featured products</h4>
+  const {
+    products_loading: loading,
+    products_error: error,
+    FeaturedProducts: featured
+  } = useProductsContext();
+
+  if(loading) {
+    return <Loading />  
+  }
+  if (error) {
+    return <Error />
+  }
+
+  return (
+    <Wrapper>
+      <h4>FeaturedProducts</h4>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

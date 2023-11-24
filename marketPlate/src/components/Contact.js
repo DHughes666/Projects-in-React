@@ -1,8 +1,53 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useForm, ValidationError } from '@formspree/react';
+import { useNavigate } from 'react-router-dom';
+
+// Make sure to run npm install @formspree/react
+// For more help visit https://formspr.ee/react-help
 
 const Contact = () => {
-  return <h4>contact section</h4>
+  // formspree setup
+  const [state, handleSubmit] = useForm("xqkvvaen");
+  if (state.succeeded) {
+    return (
+      <p>Thanks for subscribing</p>
+    )
+  }
+  return (
+    <Wrapper>
+      <div className='section-center'>
+        <h3>Join our newsletter and get 20% off</h3>
+        <div className='content'>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. 
+          </p>
+          <form className='contact-form' onSubmit={handleSubmit}>
+            <input 
+              type='email' 
+              className='form-input' 
+              placeholder='enter email'
+              id='email'
+              name='email'
+            />
+            <ValidationError 
+              prefix='Email'
+              field='email'
+              errors={state.errors}
+            />
+            <button type='submit' className='submit-btn'
+              disabled={state.submitting}
+            >
+              subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 const Wrapper = styled.section`
   padding: 5rem 0;
