@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
   const {
     products_loading: loading,
     products_error: error,
-    FeaturedProducts: featured
+    featuredProducts: featured
   } = useProductsContext();
 
   if(loading) {
@@ -21,8 +21,17 @@ const FeaturedProducts = () => {
   }
 
   return (
-    <Wrapper>
-      <h4>FeaturedProducts</h4>
+    <Wrapper className='section'>
+      <div className='title'>
+        <h2>featured products</h2>
+        <div className='underline'/>
+      </div>
+      <div className='section-center featured'>
+      {/* The slice(start, end) will determine the number of featured products */}
+        {featured.slice(0, 3).map((product) => {
+          return <Product key={product.id} {...product} />
+        })}
+      </div>
     </Wrapper>
   )
 }
