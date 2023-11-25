@@ -21,7 +21,7 @@ const initialState = {
   featuredProducts: [],
   single_product_loading: false,
   single_product_error: false,
-  single_product: [],
+  single_product: {},
 }
 
 const ProductsContext = React.createContext()

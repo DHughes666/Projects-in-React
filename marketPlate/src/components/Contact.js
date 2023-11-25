@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useForm, ValidationError } from '@formspree/react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
 
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
@@ -9,11 +10,13 @@ import { useNavigate } from 'react-router-dom';
 const Contact = () => {
   // formspree setup
   const [state, handleSubmit] = useForm("xqkvvaen");
+  // const navigate = useNavigate()
   if (state.succeeded) {
     return (
       <p>Thanks for subscribing</p>
     )
   }
+
   return (
     <Wrapper>
       <div className='section-center'>
