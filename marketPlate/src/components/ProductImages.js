@@ -10,7 +10,7 @@ const ProductImages = ({images = [{url: ''}]}) => {
       <div className='gallery'>
         {images.map((image, index) => {
           return <img src={image.url} alt={image.filename} key={index}
-          onClick={() => setMain(images[index])} 
+          onClick={() => setMain(image)} 
           className={`${image.url === main.url} && 'active}`}
         />
         })}
