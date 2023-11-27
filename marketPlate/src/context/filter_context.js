@@ -63,6 +63,12 @@ export const FilterProvider = ({ children }) => {
     if(name === 'category') {
       value = event.target.textContent
     }
+    if(name === 'color') {
+      value = event.target.dataset.color
+    }
+    if(name === 'price') {
+      value = Number(value)
+    }
     dispatch({type: UPDATE_FILTERS, payload: {name, value}})
   }
 
