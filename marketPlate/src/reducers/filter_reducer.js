@@ -78,6 +78,12 @@ const filter_reducer = (state, action) => {
         })
       }
 
+      // company
+      if(company !== 'all') {
+        tempProducts = tempProducts.filter((product)=> 
+        product.company === company)
+      }
+
       return {...state, filtered_products: tempProducts};
     }
     case CLEAR_FILTERS: {
