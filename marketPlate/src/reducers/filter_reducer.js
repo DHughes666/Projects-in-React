@@ -84,6 +84,24 @@ const filter_reducer = (state, action) => {
         product.company === company)
       }
 
+      // color
+      if(color !== 'all') {
+        tempProducts = tempProducts.filter((product) => {
+          return product.colors.find((col) => col === color)
+        })
+      }
+
+      // shipping
+      if(shipping) {
+        tempProducts = tempProducts.filter(product => product.shipping === true)
+      }
+
+      // price
+      if(price) {
+        tempProducts = tempProducts.filter((product) => product.price <= price)
+      }
+
+
       return {...state, filtered_products: tempProducts};
     }
     case CLEAR_FILTERS: {
