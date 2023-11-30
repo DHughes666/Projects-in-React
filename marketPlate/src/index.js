@@ -17,16 +17,18 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Auth0Provider
         domain='dev-xaq733ej1dy1ka5e.us.auth0.com'
-        clientId='Cn3b6PMWepzKv2GdlFTCUWJNAKfiQL3r'
+        clientId='3jFaZd3yXYuTXRnyGs1DcyKQkCzx2WP0'
         redirectUri={window.location.origin}
         cacheLocation='localstorage'
     >
-        <ProductsProvider>
-            <FilterProvider>
-                <CartProvider>
-                    <App />
-                </CartProvider>
-            </FilterProvider>
-        </ProductsProvider>
+        <UserProvider>
+            <ProductsProvider>
+                <FilterProvider>
+                    <CartProvider>
+                        <App />
+                    </CartProvider>
+                </FilterProvider>
+            </ProductsProvider>
+        </UserProvider>
     </Auth0Provider>
 ); 
