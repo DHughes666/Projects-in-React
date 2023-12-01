@@ -6,8 +6,8 @@ import { useUserContext } from '../context/user_context';
 
 const PrivateRoute = ({children}) => {
   const navigate = useNavigate()
-  const {myUser} = useUserContext();
-  if(!myUser) {
+  const {user} = useAuth0()
+  if(!user) {
     return navigate('/');
   }
   return children

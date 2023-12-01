@@ -10,11 +10,12 @@ import {
     Error,
     Checkout,
     PrivateRoute,
+    AuthWrapper
 } from './pages/index'
 
 function App() {
   return (
-    <>
+    <AuthWrapper>
     <BrowserRouter>
       <Navbar />
       <Sidebar />
@@ -32,7 +33,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
-    </>
+    </AuthWrapper>
   )
 
 }
