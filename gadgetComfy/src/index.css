@@ -186,6 +186,9 @@ p {
   color: var(--clr-primary-1);
   background: var(--clr-primary-7);
 }
+button {
+  font-family: inherit;
+}
 .title {
   text-align: center;
 }
