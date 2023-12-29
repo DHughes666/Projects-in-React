@@ -1,10 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ChevronDown, ChevronUp } from "../icons";
-import { clearCart } from "../features/cart/cart_slice";
 import { removeItem, increase, decrease } from "../features/cart/cart_slice";
 
 const CartItem = (cartItem) => {
-    // const { cartItems, total, amount } = useSelector((store) => store.cart);
+    
     const dispatch = useDispatch();
     const {id, img, title, price, amount} = cartItem
     return (
