@@ -17,7 +17,7 @@ export const getCartItems = createAsyncThunk(
             const response = await axios(url)
             return response.data;
         } catch (e) {
-            console.log(e.message);
+            console.log(e.message); 
         }
     }
 )
