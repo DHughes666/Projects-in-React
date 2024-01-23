@@ -1,9 +1,12 @@
 import React from 'react';
+import Landing from './pages/landingPage';
 
 
 function App() {
   return (
-    <h1>This is the template</h1>
+    <div>
+      <Landing />
+    </div>
   );
 }
 
