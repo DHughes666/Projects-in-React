@@ -22,21 +22,52 @@ const Register = () => {
         console.log(e.target);
     }
 
+    const toggleMember = () => {
+        setValues({...values, isMember: !values.isMember});
+    }
+
     return (
         <Wrapper className="full-page">
             <form className="form" onSubmit={onSubmit}>
                 <Logo />
-                <h3>Login</h3>
-                <FormRow
-                    type='text'
-                    name='name'
-                    value={values.name}
+                <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+                {!values.isMember && (
+                    <FormRow
+                        type='text'
+                        name='name'
+                        value={values.name}
+                        handleChange={handleChange}
+                        labelText={values.name}
+                    />
+                )}
+                <FormRow 
+                    type='email'
+                    name='email'
+                    value={values.email}
                     handleChange={handleChange}
-                    labelText={values.name}
                 />
-                <button type="submit" className="btn btn-block">
+                <FormRow 
+                    type='password'
+                    name='password'
+                    value={values.password}
+                    handleChange={handleChange}
+                />
+                <button
+                    type="submit" 
+                    className="btn btn-block"
+                    onClick={handleChange}
+                >
                     submit
                 </button>
+                <p>
+                    {values.isMember ? 'Not a member yet?' : 'Already a member?'}
+                    <button type="button" onClick={toggleMember}
+                    className="member-btn"
+                    >
+                        {values.isMember ? 'Register' : 'Login'}
+                    </button>
+                </p>
+    
             </form>
         </Wrapper>
     )
