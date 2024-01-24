@@ -19,7 +19,7 @@ function App() {
         <Route path='register' element={<Register />}/>
         <Route path='*' element={<Error />}/>
       </Routes>
-      <ToastContainer />
+      <ToastContainer position='top-center'/>
     </BrowserRouter>
   );
 }

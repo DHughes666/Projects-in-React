@@ -1,13 +1,20 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import 'normalize.css';
+import { Provider } from 'react-redux';
+
+
 import './index.css';
 import App from './App';
+import { store } from './store';
 
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <App tab='home'/>
+  <Provider store={store}>
+    <App tab='home'/>
+  </Provider>
+  
 );
