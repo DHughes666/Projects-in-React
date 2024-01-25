@@ -16,7 +16,7 @@ export const registerUser = createAsyncThunk(
             const resp = await customFetch.post('/auth/register', user);
             return resp.data;
         } catch (err) {
-            return thunkAPI.rejectWithValue(err.resp.data.msg)
+            return thunkAPI.rejectWithValue(err.response.data.msg)
         }
     }
 );
@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk(
             const resp = await customFetch.post('/auth/login', user);
             return resp.data;
         } catch (e) {
-            return thunkAPI.rejectWithValue(e.resp.data.msg)
+            return thunkAPI.rejectWithValue(e.response.data.msg)
         }
     }
 )

@@ -74,7 +74,7 @@ const Register = () => {
                     onClick={handleChange}
                     disabled={isLoading}
                 >
-                    submit
+                    {isLoading ? "Loading..." : "submit"}
                 </button>
                 <p>
                     {values.isMember ? 'Not a member yet?' : 'Already a member?'}
