@@ -72,6 +72,7 @@ const Register = () => {
                     type="submit" 
                     className="btn btn-block"
                     onClick={handleChange}
+                    disabled={isLoading}
                 >
                     submit
                 </button>
