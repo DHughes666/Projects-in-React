@@ -6,7 +6,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import { 
-  Landing, Error, Register
+  Landing, Error, Register, ProtectedRoute
  } from './pages';
 
  import {
@@ -18,7 +18,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<SharedLayout />}>
+        <Route path='/' element={
+          <ProtectedRoute>
+            <SharedLayout />
+          </ProtectedRoute>
+        }>
           <Route index element={<Stats />}/>
           <Route path='all-jobs' element={<AllJobs />} />
           <Route path='add-job' element={<AddJob />} />
