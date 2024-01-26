@@ -40,6 +40,22 @@ export const loginUser = createAsyncThunk(
     }
 )
 
+export const udateUser = createAsyncThunk(
+    'user/updateUser',
+    async (user, thunkAPI) => {
+        try {
+            const resp = await customFetch.patch('/auth/updateUser', user, {
+                headers: {
+                    Authorization: `Bearer ${thunkAPI.getState().user.token}`,
+                },
+            });
+            return resp.data;
+        } catch (e) {
+            console.log(e.response);
+        }
+    }
+)
+
 const userSlice = createSlice({
     name: 'user',
     initialState,
