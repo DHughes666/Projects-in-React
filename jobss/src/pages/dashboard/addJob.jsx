@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Wrapper from "../../assets/wrappers/DashboardFormPage";
 import { FormRow } from "../../components";
 import FormRowSelect from "./formRowSelect";
+import { handleChange } from "../../features/job/jobSlice";
 
 
 const AddJob = () => {
@@ -20,11 +21,13 @@ const AddJob = () => {
             toast.error('Please Fill Out All Fields');
             return;
         };
+        
     };
 
     const handleJobInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
+        dispatch(handleChange({name, value}));
     }
 
     return (
@@ -37,21 +40,22 @@ const AddJob = () => {
                         type='text'
                         name='position'
                         value={position}
-                        onChange={handleJobInput}
+                        handleChange={handleJobInput}
                     />
 
                     <FormRow 
                         type='text'
                         name='company'
                         value={company}
-                        onChange={handleJobInput}
+                        handleChange={handleJobInput}
                     />
 
                     <FormRow 
                         type='text'
+                        name='jobLocation'
                         labelText='job location'
                         value={jobLocation}
-                        onChange={handleJobInput}
+                        handleChange={handleJobInput}
                     />
 
                     {/* job status */}

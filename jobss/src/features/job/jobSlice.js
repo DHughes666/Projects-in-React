@@ -17,11 +17,17 @@ const initialState = {
     editJobId: ''
 };
 
+
 const jobSlice = createSlice({
     name: 'job',
     initialState,
-    reducers: {},
+    reducers: {
+        handleChange: (state, {payload: {name, value}}) => {
+            state[name] = value;
+        }
+    },
     extraReducers: (builder) => {},
 });
 
 export default jobSlice.reducer;
+export const {handleChange} = jobSlice.actions;
