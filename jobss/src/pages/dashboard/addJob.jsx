@@ -1,6 +1,7 @@
 import React from "react";
 
-import Wrapper from "../../assets/wrappers/Job";
+import Wrapper from "../../assets/wrappers/DashboardFormPage";
+import { FormRow } from "../../components";
 
 
 const AddJob = () => {
