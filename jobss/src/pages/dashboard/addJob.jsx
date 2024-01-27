@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 import Wrapper from "../../assets/wrappers/DashboardFormPage";
 import { FormRow } from "../../components";
 import FormRowSelect from "./formRowSelect";
-import { handleChange, clearValues } from "../../features/job/jobSlice";
+import { handleChange, 
+    clearValues, createJob } from "../../features/job/jobSlice";
 
 
 const AddJob = () => {
@@ -21,6 +22,8 @@ const AddJob = () => {
             toast.error('Please Fill Out All Fields');
             return;
         };
+        dispatch(createJob({position, company, jobLocation, 
+            jobType, status}))
         
     };
 
