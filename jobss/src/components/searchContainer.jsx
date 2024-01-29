@@ -1,7 +1,7 @@
 
 const SearchContainer = () => {
-    <div>
-        <h2>Jobs Container</h2>
+    return <div>
+        <h2>Search Container Holla</h2>
     </div>
 };
 

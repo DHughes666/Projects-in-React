@@ -1,8 +1,8 @@
 
-const Jobs = () => {
+const Job = () => {
     <div>
         <h2>Jobs</h2>
     </div>
 };
 
-export default Jobs;
+export default Job;
