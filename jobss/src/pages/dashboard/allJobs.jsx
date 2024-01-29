@@ -1,11 +1,15 @@
 import React from "react";
 
 import Wrapper from "../../assets/wrappers/Job";
+import { JobsContainer, SearchContainer } from "../../components";
 
 
 const AllJobs = () => {
     return (
-        <Wrapper></Wrapper>
+        <>
+            <SearchContainer />
+            <JobsContainer />
+        </>
     )
 }
 
