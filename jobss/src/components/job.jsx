@@ -5,7 +5,7 @@ import moment from 'moment';
 
 import Wrapper from '../assets/wrappers/Job';
 import JobInfo from './jobInfo';
-import { deleteJob } from '../features/job/jobSlice';
+import { deleteJob, setEditJob } from '../features/job/jobSlice';
 
 const Job = (props) => {
     const {
@@ -15,8 +15,15 @@ const Job = (props) => {
     const date = moment(createdAt).format('MMMM Do YYYY h:mm a');
     const dispatch = useDispatch();
 
-    const deleteHandler = () => {
+    const deleteJobHandler = () => {
         dispatch(deleteJob(_id));
+    }
+
+    const editJobHandler = () => {
+        dispatch(setEditJob({
+            editJobId: _id,
+            position, company, jobLocation, jobType, status
+        }));
     }
 
     return (
@@ -40,14 +47,12 @@ const Job = (props) => {
                         <Link 
                             to='/add-job'
                             className='btn edit-btn'
-                            onClick={() => {
-                                console.log('edit job')
-                            }}
+                            onClick={editJobHandler}
                         >Edit</Link>
                         <button
                             type='button'
                             className='btn delete-btn'
-                            onClick={deleteHandler}
+                            onClick={deleteJobHandler}
                         > Delete </button>
                     </div>
                 </footer>
