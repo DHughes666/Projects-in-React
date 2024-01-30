@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import Wrapper from '../assets/wrappers/Job';
 import JobInfo from './jobInfo';
+import { deleteJob } from '../features/job/jobSlice';
 
 const Job = (props) => {
     const {
@@ -13,6 +14,10 @@ const Job = (props) => {
 
     const date = moment(createdAt).format('MMMM Do YYYY h:mm a');
     const dispatch = useDispatch();
+
+    const deleteHandler = () => {
+        dispatch(deleteJob(_id));
+    }
 
     return (
         <Wrapper>
@@ -42,7 +47,7 @@ const Job = (props) => {
                         <button
                             type='button'
                             className='btn delete-btn'
-                            onClick={() => console.log('delete job')}
+                            onClick={deleteHandler}
                         > Delete </button>
                     </div>
                 </footer>

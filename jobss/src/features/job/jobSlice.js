@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { customFetch } from "../../utils";
 import { getUserFromLocalStorage } from "../../utils";
 import { logoutUser } from "../user/userSlice";
+import { showLoading, hideLoading, getAllJobs } from "../allJobs/allJobs";
 
 const initialState = {
     isLoading: false,
@@ -36,6 +37,26 @@ export const createJob = createAsyncThunk(
                 return thunkAPI.rejectWithValue('Unauthorized! Logging Out...');
             }
             return thunkAPI.rejectWithValue(e.response.data.msg);
+        }
+    }
+)
+
+
+export const deleteJob = createAsyncThunk(
+    'allJobs/deleteJob',
+    async (jobId, thunkAPI) => {
+        thunkAPI.dispatch(showLoading());
+        try {
+            const resp = await customFetch.delete(`/jobs/${jobId}`, {
+                headers: {
+                    authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+                },
+            });
+            thunkAPI.dispatch(getAllJobs());
+            return resp.data;
+        } catch (e) {
+            thunkAPI.dispatch(hideLoading());
+            return thunkAPI.rejectWithValue(e.resonse.data.msg)
         }
     }
 )
