@@ -7,10 +7,9 @@ import NavLinks from "./navlinks";
 import Job from "./job";
 import JobsContainer from "./jobsContainer";
 import SearchContainer from "./searchContainer";
-
-
+import JobInfo from "./jobInfo";
 
 
 export { Logo, FormRow, BigSideBar, NavLinks, 
     SmallSideBar, Navbar, Job, JobsContainer, 
-    SearchContainer};
+    SearchContainer, JobInfo };
