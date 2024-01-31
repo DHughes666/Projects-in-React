@@ -64,9 +64,9 @@ const jobSlice = createSlice({
                 state.isLoading = false;
                 toast.error(payload)
             })
-            .addCase(deleteJob.fulfilled, (state, {payload}) => {
+            .addCase(deleteJob.fulfilled, (state) => {
                 state.isLoading = false;
-                toast.success(payload);
+                toast.success('Job Removed...');
             })
             .addCase(deleteJob.rejected, (state, {payload}) => {
                 state.isLoading = false;
