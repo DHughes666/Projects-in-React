@@ -9,14 +9,16 @@ import Loading from "./Loading";
 import PageBtnContainer from "./pageBtnContainer";
 
 const JobsContainer = () => {
-    const {jobs, isLoading, page, totalJobs, numOfPages} = 
+    const {
+        jobs, isLoading, page, totalJobs, numOfPages,
+        search, searchStatus, searchType, sort} = 
         useSelector((store) => store.allJobs);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getAllJobs());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [page, search, searchStatus, searchType, sort]);
 
     if (isLoading) {
         return (
