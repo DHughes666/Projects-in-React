@@ -13,8 +13,9 @@ import StatsContainer from "./statsContainer";
 import ChartsContainer from "./chartsContainer";
 import AreaChart from "./areaChart";
 import BarChart from "./barChart";
+import FormRowSelect from "../pages/dashboard/formRowSelect";
 
 
 export { Logo, FormRow, BigSideBar, NavLinks, StatsContainer, AreaChart,
     SmallSideBar, Navbar, Job, JobsContainer, ChartsContainer, BarChart,
-    SearchContainer, JobInfo, Loading };
+    SearchContainer, JobInfo, Loading, FormRowSelect };
