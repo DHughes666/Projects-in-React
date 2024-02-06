@@ -11,8 +11,10 @@ import JobInfo from "./jobInfo";
 import Loading from "./Loading";
 import StatsContainer from "./statsContainer";
 import ChartsContainer from "./chartsContainer";
+import AreaChart from "./areaChart";
+import BarChart from "./barChart";
 
 
-export { Logo, FormRow, BigSideBar, NavLinks, StatsContainer,
-    SmallSideBar, Navbar, Job, JobsContainer, ChartsContainer,
+export { Logo, FormRow, BigSideBar, NavLinks, StatsContainer, AreaChart,
+    SmallSideBar, Navbar, Job, JobsContainer, ChartsContainer, BarChart,
     SearchContainer, JobInfo, Loading };
