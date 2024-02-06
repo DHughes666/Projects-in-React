@@ -33,7 +33,6 @@ export const getAllJobs = createAsyncThunk(
                     authorization: `Bearer ${thunkAPI.getState().user.user.token}`
                 },
             });
-
             return resp.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.response.data.msg);
@@ -74,6 +73,9 @@ const allJobsSlice = createSlice({
         },
         clearFilters: (state) => {
             return {...state, ...initialFilterState}
+        },
+        changePage: (state, {payload}) => {
+            state.page = payload;
         }
     },
     extraReducers: (builder) => {
@@ -85,7 +87,7 @@ const allJobsSlice = createSlice({
                 state.isLoading = false;
                 state.jobs = payload.jobs;
                 state.numOfPages = payload.numOfPages;
-                state.totalJobs = payload.totalJobs
+                state.totalJobs = payload.totalJobs;
             })
             .addCase(getAllJobs.rejected, (state, {payload}) => {
                 state.isLoading = false;
@@ -107,6 +109,6 @@ const allJobsSlice = createSlice({
 });
 
 export default allJobsSlice.reducer;
-export const {showLoading, hideLoading, 
+export const {showLoading, hideLoading, changePage,
     handleChange, clearFilters} = allJobsSlice.actions;
 
