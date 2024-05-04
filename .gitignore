@@ -27,3 +27,5 @@ jobster/node_modules
 practical_projects/markdown/node_modules
 practical_projects/random_user/node_modules
 practical_projects/pagination/node_modules
+practical_projects/photos/node_modules
+practical_projects/photos/.env
