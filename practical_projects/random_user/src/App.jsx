@@ -41,7 +41,11 @@ function App() {
   }, [])
 
   const handleValue = (e) => {
-    console.log(e.target);
+    if(e.target.classList.contains('icon')){
+      const newValue = e.target.dataset.label;
+      setTitle(newValue);
+      setValue(person[newValue]);
+    }
   }
 
   return (
@@ -90,7 +94,8 @@ function App() {
                 <FaLock />
               </button>
             </div>
-            <button className='btn' type='button'>
+            <button className='btn' type='button'
+            onClick={getPerson}>
               {loading ? 'loading...' : value}
             </button>
           </div>
