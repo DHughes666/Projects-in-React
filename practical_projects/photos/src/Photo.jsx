@@ -14,7 +14,7 @@ const Photo = (
       <div className='photo-info'>
         <div>
           <h4>{name}</h4>
-          <p>{likes}</p>
+          <p>{likes} likes</p>
         </div>
         <a href={portfolio_url}>
           <img src={medium} alt={name} className='user-img'/>
